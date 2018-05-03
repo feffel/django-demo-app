@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+<div class="container">
+    <br>
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+    <form method="POST" class="post-form" style="align-self: center;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default" name="action" value="redirect">Save</button>
+        <button type="submit" class="save btn btn-default" name="action" value="reload">Save and add another</button>
+    </form></div>
+</div>
+
+{% endblock %}
